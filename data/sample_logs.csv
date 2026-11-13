@@ -1,0 +1,13 @@
+timestamp,user,src_host,dest_host,event_type,src_ip,status,details
+2026-11-10T02:14:00Z,rahul.m,EXTERNAL,WS-014,login_success,203.0.113.50,success,login from unfamiliar IP
+2026-11-10T02:21:00Z,rahul.m,WS-014,FS-01,login_success,10.0.1.14,success,remote login to file server
+2026-11-10T02:41:00Z,svc_backup,FS-01,DC-01,login_success,10.0.1.20,success,admin login to domain controller
+2026-11-10T02:58:00Z,svc_backup,DC-01,EXTERNAL,network_connection,198.51.100.77,success,outbound connection to external IP
+2026-11-10T09:02:00Z,priya.s,WS-021,FS-01,login_success,10.0.2.21,success,morning login to file server
+2026-11-10T09:15:00Z,amit.k,WS-007,WS-007,login_success,10.0.3.7,success,regular workstation login
+2026-11-10T09:48:00Z,priya.s,WS-021,FS-01,login_failed,10.0.2.21,failed,wrong password once
+2026-11-10T10:30:00Z,rahul.m,WS-014,WS-014,login_success,10.0.1.14,success,normal daytime login
+2026-11-10T13:05:00Z,amit.k,WS-007,FS-01,login_success,,success,file server access
+2026-11-10T14:20:00Z,priya.s,WS-021,WS-021,login_success,10.0.2.21,success,afternoon login
+2026-11-10T01:00:00Z,svc_backup,FS-01,FS-01,login_success,10.0.1.20,success,scheduled nightly backup job
+2026-11-10T02:35:00Z,svc_backup,FS-01,DC-01,privilege_change,10.0.1.20,success,added to Domain Admins

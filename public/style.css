@@ -1,0 +1,57 @@
+/* overview.css: styles used only on the Overview page. */
+
+/* Hero: investigation story on the left, risk ring on the right */
+.hero { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; padding: 22px 24px; }
+.hero-main { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.hero-title { margin: 0; font-family: var(--font-display); font-size: 26px; font-weight: 600; }
+.hero-summary { margin: 0; font-size: 16px; line-height: 1.55; color: #D6DEE6; max-width: 72ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.hero-risk { flex: 1 1 160px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+/* Attack stage tiles (they are buttons, so they are keyboard accessible) */
+.stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.stage {
+  display: flex; flex-direction: column; gap: 6px; min-height: 44px; padding: 12px;
+  border-radius: 8px; font: inherit; color: inherit; text-align: left; cursor: pointer;
+}
+.stage.detected, .stage.suspicious { background: rgba(249,115,22,.10); border: 1px solid rgba(249,115,22,.45); }
+.stage.not_observed { background: transparent; border: 1px dashed #2A3A52; }
+.stage.not_observed .stage-name { color: var(--muted); }
+.stage.selected { box-shadow: 0 0 0 2px var(--accent); }
+.stage-name { font-weight: 600; }
+
+/* Attack path: a row of entity "nodes" joined by arrows */
+.path { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 0; }
+.path-node {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px;
+  background: var(--surface-2); border: 1.5px solid var(--high); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 12.5px;
+}
+.path-node.entry { border-color: var(--critical); box-shadow: 0 0 0 3px rgba(239,68,68,.18); }
+.path-entry-tag { font-family: var(--font-ui); font-size: 10px; font-weight: 700; color: #fff; background: #B91C1C; border-radius: 999px; padding: 1px 6px; }
+.path-arrow { width: 34px; height: 2px; background: var(--high); position: relative; flex: none; }
+.path-arrow::after { content: ""; position: absolute; right: -1px; top: -4px; border: 5px solid transparent; border-left-color: var(--high); border-right: 0; }
+.path-arrow.inferred { background: repeating-linear-gradient(90deg, var(--medium) 0 5px, transparent 5px 9px); }
+.path-arrow.inferred::after { border-left-color: var(--medium); }
+
+/* Severity donut + legend */
+.donut-wrap { display: flex; gap: 18px; align-items: center; }
+.donut-box { position: relative; width: 130px; height: 130px; flex: none; }
+.donut-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; }
+.donut-center strong { font-family: var(--font-display); font-size: 24px; }
+.legend { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.legend-item { display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 6px; min-height: 30px; width: 100%; }
+.legend-item:hover, .legend-item:focus-visible { background: var(--surface-2); }
+.legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.legend-item span:nth-child(2) { flex: 1; }
+
+/* Top rules bars */
+.rule { padding: 5px 0; }
+.rule-top { display: flex; justify-content: space-between; font-size: 13px; }
+.rule-track { height: 6px; border-radius: 3px; background: var(--surface-2); margin-top: 4px; }
+.rule-fill { height: 6px; border-radius: 3px; background: var(--accent); }
+
+/* Key events rows */
+.event-cols { grid-template-columns: 84px minmax(0, 2fr) minmax(0, 1.2fr) minmax(0, 1.2fr) 90px; }
+.event-detail { padding: 0 12px 12px 108px; }
