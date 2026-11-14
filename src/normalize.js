@@ -5,7 +5,7 @@ function normalizeEvents(rawEvents) {
       if (isNaN(time)) return null; // skip rows with a broken timestamp
 
       return {
-        id: 'E' + (index + 1),
+        id: "E" + (index + 1),
         timestamp: time.toISOString(),
         time_ms: time.getTime(),
         user: row.user.trim().toLowerCase(),
@@ -15,6 +15,8 @@ function normalizeEvents(rawEvents) {
         src_ip: row.src_ip.trim() || null,
         status: row.status.trim(),
         details: row.details.trim(),
+        line: row._line,
+        raw: row._raw,
       };
     })
     .filter(Boolean);
